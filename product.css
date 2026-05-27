@@ -140,6 +140,7 @@
 .p-hero-img {
     width: 100%;
     height: 100%;
+    aspect-ratio: 1536 / 1024;
     object-fit: cover;
     object-position: center;
     border-radius: 12px;
@@ -293,6 +294,24 @@
     display: block;
 }
 
+.p-problem-card img[src*="icon-sns"] {
+    width: 32.6px;
+    height: 36px;
+    aspect-ratio: 28.4626 / 31.4414;
+}
+
+.p-problem-card img[src*="icon-perfectionism"] {
+    width: 36px;
+    height: 34.4px;
+    aspect-ratio: 34.8653 / 33.3229;
+}
+
+.p-problem-card img[src*="icon-shame"] {
+    width: 36px;
+    height: 31.7px;
+    aspect-ratio: 34.3142 / 30.2511;
+}
+
 .p-problem-card h3 {
     font-family: 'Urbanist', sans-serif;
     font-weight: 700;
@@ -332,6 +351,7 @@
 .p-how-img {
     width: 100%;
     height: 100%;
+    aspect-ratio: 1402 / 1034;
     object-fit: cover;
     object-position: center;
     display: block;
@@ -481,6 +501,7 @@
     right: 0;
     width: 100px;
     height: auto;
+    aspect-ratio: 100.192 / 95.3333;
     display: block;
     object-fit: contain;
     z-index: 2;
@@ -522,6 +543,14 @@
     margin-top: auto;
     align-self: center;
     transition: transform 0.3s ease;
+}
+
+.p-feature-bottom-img[src*="3-slots"] {
+    aspect-ratio: 307.333 / 52.5333;
+}
+
+.p-feature-bottom-img[src*="qr"] {
+    aspect-ratio: 307.333 / 60.2667;
 }
 
 .p-feature-card.has-bottom-image:hover .p-feature-bottom-img {

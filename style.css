@@ -266,6 +266,8 @@ section {
     width: 100%;
     height: auto;
     max-height: 80vh;
+    aspect-ratio: 203 / 168;
+    align-self: flex-end;
     object-fit: contain;
     display: block;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
@@ -447,6 +449,24 @@ section {
     width: auto;
     flex-shrink: 0;
     display: block;
+}
+
+.feature-header img[src*="resilience"] {
+    width: 16px;
+    height: 20px;
+    aspect-ratio: 16 / 20;
+}
+
+.feature-header img[src*="honesty"] {
+    width: 29.33px;
+    height: 20px;
+    aspect-ratio: 22 / 15;
+}
+
+.feature-header img[src*="resurrection"] {
+    width: 17.34px;
+    height: 20px;
+    aspect-ratio: 16 / 18.45;
 }
 
 .feature-header h3 {
