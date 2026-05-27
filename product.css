@@ -292,24 +292,7 @@
     max-height: 100%;
     object-fit: contain;
     display: block;
-}
-
-.p-problem-card img[src*="icon-sns"] {
-    width: 32.6px;
-    height: 36px;
-    aspect-ratio: 28.4626 / 31.4414;
-}
-
-.p-problem-card img[src*="icon-perfectionism"] {
-    width: 36px;
-    height: 34.4px;
-    aspect-ratio: 34.8653 / 33.3229;
-}
-
-.p-problem-card img[src*="icon-shame"] {
-    width: 36px;
-    height: 31.7px;
-    aspect-ratio: 34.3142 / 30.2511;
+    flex-shrink: 0;
 }
 
 .p-problem-card h3 {

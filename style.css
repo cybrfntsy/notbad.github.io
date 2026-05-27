@@ -368,7 +368,7 @@ section {
 
 .icon-sm {
     width: 33px;
-    height: 28.5px;
+    height: 33px;
     flex-shrink: 0;
     display: block;
     object-fit: contain;
@@ -445,28 +445,10 @@ section {
 }
 
 .feature-header img {
+    width: 20px;
     height: 20px;
-    width: auto;
     flex-shrink: 0;
     display: block;
-}
-
-.feature-header img[src*="resilience"] {
-    width: 16px;
-    height: 20px;
-    aspect-ratio: 16 / 20;
-}
-
-.feature-header img[src*="honesty"] {
-    width: 29.33px;
-    height: 20px;
-    aspect-ratio: 22 / 15;
-}
-
-.feature-header img[src*="resurrection"] {
-    width: 17.34px;
-    height: 20px;
-    aspect-ratio: 16 / 18.45;
 }
 
 .feature-header h3 {
