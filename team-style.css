@@ -230,6 +230,8 @@
 .op-icon-wrapper img {
     width: 26px;
     height: 26px;
+    object-fit: contain;
+    display: block;
 }
 
 .op-quote {

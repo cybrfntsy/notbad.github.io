@@ -443,11 +443,10 @@ section {
 }
 
 .feature-header img {
-    width: 20px;
     height: 20px;
+    width: auto;
     flex-shrink: 0;
     display: block;
-    object-fit: contain;
 }
 
 .feature-header h3 {
