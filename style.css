@@ -14,6 +14,11 @@
     --font-mono: 'Liberation Sans', system-ui, -apple-system, sans-serif;
 }
 
+img[src$=".svg"] {
+    width: 36px;
+    height: 36px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -243,14 +248,14 @@ section {
     background-color: #dfff1a;
 }
 
-.arrow-icon {
+img.arrow-icon {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
     display: block;
     transition: transform 0.3s;
 }
-.cta-button:hover .arrow-icon {
+.cta-button:hover img.arrow-icon {
     transform: translateX(10px);
 }
 
@@ -320,6 +325,7 @@ section {
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 16px;
 }
 
@@ -366,7 +372,7 @@ section {
     max-width: 768px;
 }
 
-.icon-sm {
+img.icon-sm {
     width: 33px;
     height: 33px;
     flex-shrink: 0;
@@ -374,7 +380,7 @@ section {
     object-fit: contain;
 }
 
-.icon-md {
+img.icon-md {
     width: 52.5px;
     height: 52.5px;
     flex-shrink: 0;
@@ -444,7 +450,7 @@ section {
     margin-bottom: 16px;
 }
 
-.feature-header img {
+div.feature-header img {
     width: 20px;
     height: 20px;
     flex-shrink: 0;
