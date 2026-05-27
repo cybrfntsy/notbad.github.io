@@ -70,6 +70,8 @@ a {
 
 .logo img {
     height: 32px;
+    width: auto;
+    display: block;
     object-fit: contain;
 }
 
@@ -243,6 +245,9 @@ section {
 
 .arrow-icon {
     width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: block;
     transition: transform 0.3s;
 }
 .cta-button:hover .arrow-icon {
@@ -259,8 +264,10 @@ section {
 
 .sprout-image {
     width: 100%;
+    height: auto;
     max-height: 80vh;
     object-fit: contain;
+    display: block;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
 }
 
@@ -360,12 +367,16 @@ section {
 .icon-sm {
     width: 33px;
     height: 28.5px;
+    flex-shrink: 0;
+    display: block;
     object-fit: contain;
 }
 
 .icon-md {
     width: 52.5px;
     height: 52.5px;
+    flex-shrink: 0;
+    display: block;
     object-fit: contain;
 }
 
@@ -432,8 +443,10 @@ section {
 }
 
 .feature-header img {
+    width: 20px;
     height: 20px;
-    width: auto;
+    flex-shrink: 0;
+    display: block;
     object-fit: contain;
 }
 
@@ -631,7 +644,7 @@ section {
     border-top: 1px solid rgba(209,241,0,0.2);
 }
 
-.footer-logo img { height: 28px; }
+.footer-logo img { height: 28px; width: auto; display: block; }
 
 .copyright {
     font-family: var(--font-mono);
