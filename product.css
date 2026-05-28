@@ -281,7 +281,6 @@
 .p-card-icon {
     width: 36px;
     height: 36px;
-    width: auto;
     object-fit: contain;
 }
 
