@@ -204,6 +204,7 @@ section {
     animation: titleLineUp 0.8s cubic-bezier(.2,.9,.2,1) forwards;
     opacity: 0;
     animation-delay: 0.1s;
+    text-align: center;
 }
 .main-title .title-line:nth-child(1) { animation-delay: 0.1s; }
 .main-title .title-line:nth-child(2) { animation-delay: 0.25s; }
