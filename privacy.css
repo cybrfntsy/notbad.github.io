@@ -1,0 +1,85 @@
+.privacy-section {
+    padding: 64px 24px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-dark);
+    min-height: calc(100vh - 65px - 100px);
+}
+
+.privacy-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.privacy-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.privacy-header .main-title {
+    font-size: clamp(36px, 5vw, 48px);
+    margin-bottom: 8px;
+}
+
+.privacy-content {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 41px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.policy-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.policy-block h3 {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    font-size: 20px;
+    border-bottom: 1px solid rgba(69, 73, 50, 0.5);
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+}
+
+.policy-block p {
+    color: #e5e2e1;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.policy-block ul {
+    list-style: none;
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.policy-block ul li {
+    color: #c6c9ab;
+    font-size: 14px;
+    position: relative;
+}
+
+.policy-block ul li::before {
+    content: '>';
+    color: var(--primary);
+    font-family: var(--font-mono);
+    position: absolute;
+    left: -16px;
+}
+
+@media (max-width: 768px) {
+    .privacy-content {
+        padding: 24px;
+    }
+}
