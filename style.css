@@ -74,6 +74,9 @@ a {
 }
 
 .nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     gap: 24px;
 }
@@ -688,7 +691,7 @@ section {
 
 @media (max-width: 768px) {
     .navbar { flex-wrap: wrap; gap: 16px; }
-    .nav-links { width: 100%; justify-content: center; }
+    .nav-links { position: static; transform: none; width: 100%; justify-content: center; }
     .main-title { font-size: 48px; }
     .section-title { font-size: 36px; }
     .solution-title { font-size: 36px; }
