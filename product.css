@@ -541,11 +541,15 @@ img.p-feature-bottom-img {
 }
 
 img.p-feature-bottom-img[src*="3-slots"] {
-    aspect-ratio: 307.333 / 52.5333;
+    width: 90px !important;
+    height: 90px !important;
+    aspect-ratio: 1 / 1;
 }
 
 img.p-feature-bottom-img[src*="qr"] {
-    aspect-ratio: 307.333 / 60.2667;
+    width: 90px !important;
+    height: 90px !important;
+    aspect-ratio: 1 / 1;
 }
 
 .p-feature-card.has-bottom-image:hover img.p-feature-bottom-img {
