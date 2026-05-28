@@ -60,7 +60,7 @@
             
             <div class="operators-grid">
                 <!-- Operator 1 -->
-                <div class="operator-card reveal" style="--i: 0;">
+                <div class="operator-card">
                     <div class="op-badge">OP-01</div>
                     <div class="bg-pattern" style="mask-image: url('assets/member-bg.svg'); -webkit-mask-image: url('assets/member-bg.svg');">
                         <div class="grid-tile"></div>
@@ -85,7 +85,7 @@
                 </div>
 
                 <!-- Operator 2 -->
-                <div class="operator-card reveal" style="--i: 1;">
+                <div class="operator-card">
                     <div class="op-badge">OP-02</div>
                     <div class="bg-pattern" style="mask-image: url('assets/member-bg.svg'); -webkit-mask-image: url('assets/member-bg.svg');">
                         <div class="grid-tile"></div>
@@ -148,12 +148,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const obs = new IntersectionObserver(entries => {
-                entries.forEach(e => {
-                    if (e.isIntersecting) e.target.classList.add('shown');
-                });
-            }, { threshold: 0.2 });
-            document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
         });
     </script>
 </body>
