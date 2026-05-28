@@ -699,3 +699,12 @@ section {
     .cta-title { font-size: 40px; text-align: center; }
     .btn-vault { font-size: 24px; }
 }
+
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s, transform .7s;
+}
+.reveal.shown { opacity: 1; transform: translateY(0); }
+.reveal:nth-child(n) { transition-delay: calc(var(--i) * 120ms); }

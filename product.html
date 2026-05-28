@@ -35,52 +35,35 @@
             <div class="section-badge">01 / HERO</div>
             <div class="p-hero-container">
                 <div class="p-hero-content">
-                    <h1 class="p-hero-title">not bad.</h1>
+                    <h1 class="p-hero-title title-line" style="animation-delay: 0.1s;">not bad.</h1>
                     <div class="p-hero-subtitle">
-                        <p>실패를 숨기지 마세요</p>
-                        <p class="highlight">- 망했다 일기장</p>
+                        <p class="title-line" style="animation-delay: 0.2s;">실패를 숨기지 마세요</p>
+                        <p class="highlight title-line" style="animation-delay: 0.3s;">- 망했다 일기장</p>
                     </div>
                     <button class="p-hero-btn" onclick="location.href='#buy'">
                         <span>망했다 일기장 구경하기</span>
                         <img src="assets/arrow-up-right.svg" alt="" class="p-btn-icon">
                     </button>
-                </div>
-                <div class="p-hero-image-wrapper">
-                    <div class="p-hero-image-card">
-                        <img src="assets/product-hero.png" alt="망했다 일기장 클로즈업" class="p-hero-img">
-                        <div class="p-hero-overlay">
-                            <h3>FAILURE IS DATA.</h3>
-                            <p>Your mistakes are just raw information for your next success.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 2: Problem -->
-        <section class="p-problem-section">
-            <div class="section-badge">02 / PROBLEM</div>
-            <div class="p-problem-container">
                 <div class="p-section-header">
                     <h2>또 망했네!<br>근데 왜 망했는지는 알 것 같은데...</h2>
                     <div class="p-header-line"></div>
                 </div>
                 <div class="p-problem-grid">
-                    <div class="p-problem-card">
+                    <div class="p-problem-card reveal" style="--i: 0;">
                         <div class="p-card-icon-wrapper">
                             <img src="assets/icon-sns.svg" alt="SNS Comparison" class="p-card-icon">
                         </div>
                         <h3>SNS Comparison</h3>
                         <p>남들의 화려한 성공에 내 작고 소중한 실패를 숨기느라 바빴나요?</p>
                     </div>
-                    <div class="p-problem-card">
+                    <div class="p-problem-card reveal" style="--i: 1;">
                         <div class="p-card-icon-wrapper">
                             <img src="assets/icon-perfectionism.svg" alt="Perfectionism" class="p-card-icon">
                         </div>
                         <h3>Perfectionism</h3>
                         <p>완벽하지 않으면 시작조차 못하는 당신을 위한 불완전함의 기록.</p>
                     </div>
-                    <div class="p-problem-card">
+                    <div class="p-problem-card reveal" style="--i: 2;">
                         <div class="p-card-icon-wrapper">
                             <img src="assets/icon-shame.svg" alt="Shame" class="p-card-icon">
                         </div>
@@ -129,7 +112,7 @@
             <div class="section-badge">04 / KEY FEATURES</div>
             <div class="p-features-grid">
                 <!-- Card 1: Matte Black / Neon Edge -->
-                <div class="p-feature-card span-2 highlight-glow">
+                <div class="p-feature-card span-2 highlight-glow reveal" style="--i: 0;">
                     <div class="p-feature-content">
                         <h3>Matte Black / Neon Edge</h3>
                         <p>시선을 사로잡는 네온 옐로우 엣지와 묵직한 매트 블랙의 조화.</p>
@@ -139,7 +122,7 @@
                 </div>
 
                 <!-- Card 2: Pocket Size -->
-                <div class="p-feature-card bottom-border-accent">
+                <div class="p-feature-card bottom-border-accent reveal" style="--i: 1;">
                     <div class="p-feature-content">
                         <h3>Pocket Size</h3>
                         <p>언제 어디서나 부담 없이 휴대 가능한 완벽한 컴팩트 사이즈.</p>
@@ -148,7 +131,7 @@
                 </div>
 
                 <!-- Card 3: 3-Slot Pages -->
-                <div class="p-feature-card has-bottom-image">
+                <div class="p-feature-card has-bottom-image reveal" style="--i: 2;">
                     <div class="p-feature-content">
                         <h3>3-Slot Pages</h3>
                         <p>구조화된 3단계 질문으로 실패를 논리적으로 분해합니다.</p>
@@ -157,7 +140,7 @@
                 </div>
 
                 <!-- Card 4: QR Community -->
-                <div class="p-feature-card has-bottom-image">
+                <div class="p-feature-card has-bottom-image reveal" style="--i: 3;">
                     <div class="p-feature-content">
                         <h3>QR Community</h3>
                         <p>익명으로 실패를 공유하고 서로를 응원하는 'NOT BAD' 클럽 입장.</p>
@@ -166,7 +149,7 @@
                 </div>
 
                 <!-- Card 5: Sticker Sheet (Yellow theme) -->
-                <div class="p-feature-card sticker-card">
+                <div class="p-feature-card sticker-card reveal" style="--i: 4;">
                     <div class="p-feature-content">
                         <h3>Sticker Sheet</h3>
                         <p>실패를 더 귀엽게, 혹은 더 과감하게 표현할 수 있는 커스텀 스티커.</p>
@@ -182,7 +165,7 @@
         <!-- Section 5: Use Case -->
         <section class="p-usecase-section">
             <div class="section-badge">05 / USE CASE</div>
-            <div class="p-usecase-card">
+            <div class="p-usecase-card reveal" style="--i: 0;">
                 <div class="p-usecase-user">
                     <div class="p-user-avatar">
                         <img src="assets/user-avatar.svg" alt="">
@@ -225,5 +208,16 @@
             <a href="#">Instagram</a>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const obs = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) e.target.classList.add('shown');
+                });
+            }, { threshold: 0.2 });
+            document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+        });
+    </script>
 </body>
 </html>

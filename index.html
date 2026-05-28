@@ -89,7 +89,7 @@
         <section class="features-section">
             <div class="features-grid">
                 <!-- Card 1 -->
-                <div class="feature-card dark-card card-span-2">
+                <div class="feature-card dark-card card-span-2 reveal" style="--i: 0;">
                     <div class="card-inner">
                         <div class="feature-header">
                             <img src="assets/resilience.svg" width="20" height="20" alt="Resilience">
@@ -103,7 +103,7 @@
                 </div>
                 
                 <!-- Card 2 -->
-                <div class="feature-card dark-card">
+                <div class="feature-card dark-card reveal" style="--i: 1;">
                     <div class="card-inner">
                         <div class="feature-header">
                             <img src="assets/honesty.svg" width="20" height="20" alt="Honesty">
@@ -115,7 +115,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="feature-card highlight-card card-span-3">
+                <div class="feature-card highlight-card card-span-3 reveal" style="--i: 2;">
                     <div class="feature-info">
                         <div class="feature-header dark-text">
                             <img src="assets/resurrection.svg" width="20" height="20" alt="Resurrection">
@@ -139,7 +139,7 @@
                         <div class="connecting-line-inner"></div>
                     </div>
                     
-                    <div class="step-card">
+                    <div class="step-card reveal" style="--i: 0;">
                         <div class="step-number-container">
                             <div class="step-number">01</div>
                         </div>
@@ -147,7 +147,7 @@
                         <p>Input failure data.</p>
                     </div>
                     
-                    <div class="step-card active">
+                    <div class="step-card active reveal" style="--i: 1;">
                         <div class="step-number-container">
                             <div class="step-number">02</div>
                         </div>
@@ -155,7 +155,7 @@
                         <p>Community feedback loop.</p>
                     </div>
                     
-                    <div class="step-card">
+                    <div class="step-card reveal" style="--i: 2;">
                         <div class="step-number-container">
                             <div class="step-number">03</div>
                         </div>
@@ -187,5 +187,16 @@
             <a href="#">Instagram</a>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const obs = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) e.target.classList.add('shown');
+                });
+            }, { threshold: 0.2 });
+            document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+        });
+    </script>
 </body>
 </html>
