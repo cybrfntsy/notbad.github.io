@@ -145,5 +145,31 @@
             <a href="#">SUPPORT</a>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const title = document.querySelector('.team-title');
+            const lines = ["완벽한 마침표보다,", "유쾌한 쉼표를 찍는 사람들"];
+            const delay = 30;
+            let html = '';
+            let prevLetterCount = 0;
+
+            lines.forEach(line => {
+                html += '<div class="line">';
+                for (let i = 0; i < line.length; i++) {
+                    const ch = line[i];
+                    const content = ch === ' ' ? '&nbsp;' : ch;
+                    html += `<span style="transition-delay: ${(prevLetterCount + i) * delay}ms">${content}</span>`;
+                }
+                prevLetterCount += line.length;
+                html += '</div>';
+            });
+
+            title.innerHTML = html;
+
+            setTimeout(() => {
+                title.querySelectorAll('span').forEach(span => span.classList.add('visible'));
+            }, 100);
+        });
+    </script>
 </body>
 </html>
