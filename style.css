@@ -173,6 +173,7 @@ section {
     gap: 24px;
     width: 100%;
     max-width: 680px;
+    align-items: center;
 }
 
 .system-init-box {
