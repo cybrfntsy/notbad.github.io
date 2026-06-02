@@ -20,12 +20,11 @@ class DecryptedText {
     this.element.style.display = 'inline-block';
     this.element.style.whiteSpace = 'pre-wrap';
     
-    this.bindEvents();
-  }
-
-  bindEvents() {
-    this.element.addEventListener('mouseenter', () => this.startAnimation());
-    this.element.addEventListener('mouseleave', () => this.resetText());
+    // 처음에 등장할 때 애니메이션을 한 번만 실행합니다.
+    // 레이아웃이 완전히 잡힌 뒤에 크기를 측정하기 위해 약간의 지연을 줍니다.
+    setTimeout(() => {
+      this.startAnimation();
+    }, 100);
   }
 
   shuffleText(currentRevealed) {
