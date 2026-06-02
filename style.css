@@ -161,7 +161,7 @@ section {
     align-items: stretch;
     justify-content: center;
     gap: 60px;
-    padding: 60px 40px;
+    padding: 320px 40px;
     position: relative;
 }
 
@@ -364,7 +364,7 @@ img.arrow-icon {
 
 /* Solution Section */
 .solution-section {
-    padding: 64px 128px;
+    padding: 200px 128px;
     display: flex;
     justify-content: center;
     background: radial-gradient(ellipse at center, rgba(69,73,50,0.2) 0%, transparent 70%);
@@ -537,7 +537,7 @@ div.feature-header img {
 
 /* System Process Section */
 .process-section {
-    padding: 64px 128px;
+    padding: 300px 128px;
     display: flex;
     justify-content: center;
     background-color: var(--bg-dark);
