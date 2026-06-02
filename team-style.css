@@ -237,7 +237,7 @@
     width: calc(100% + 48px);
     margin-left: -24px;
     margin-right: -24px;
-    height: 260px;
+    height: 600px;
     object-fit: cover;
     object-position: top center;
     display: block;
