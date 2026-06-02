@@ -49,10 +49,21 @@ class DotGrid {
   init() {
     this.innerWrap = document.createElement('div');
     this.innerWrap.classList.add('dot-grid__wrap');
+    this.innerWrap.style.position = 'absolute';
+    this.innerWrap.style.top = '0';
+    this.innerWrap.style.left = '0';
+    this.innerWrap.style.width = '100%';
+    this.innerWrap.style.height = '100%';
     this.wrapper.appendChild(this.innerWrap);
 
     this.canvas = document.createElement('canvas');
     this.canvas.classList.add('dot-grid__canvas');
+    this.canvas.style.position = 'absolute';
+    this.canvas.style.top = '0';
+    this.canvas.style.left = '0';
+    this.canvas.style.width = '100%';
+    this.canvas.style.height = '100%';
+    this.canvas.style.pointerEvents = 'none';
     this.innerWrap.appendChild(this.canvas);
     this.ctx = this.canvas.getContext('2d');
 
