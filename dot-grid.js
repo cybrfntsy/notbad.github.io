@@ -47,10 +47,13 @@ class DotGrid {
   }
 
   init() {
-    this.wrapper.classList.add('dot-grid__wrap');
+    this.innerWrap = document.createElement('div');
+    this.innerWrap.classList.add('dot-grid__wrap');
+    this.wrapper.appendChild(this.innerWrap);
+
     this.canvas = document.createElement('canvas');
     this.canvas.classList.add('dot-grid__canvas');
-    this.wrapper.appendChild(this.canvas);
+    this.innerWrap.appendChild(this.canvas);
     this.ctx = this.canvas.getContext('2d');
 
     this.circlePath = new Path2D();
@@ -65,7 +68,7 @@ class DotGrid {
     
     if ('ResizeObserver' in window) {
       this.ro = new ResizeObserver(this.buildGrid);
-      this.ro.observe(this.wrapper);
+      this.ro.observe(this.innerWrap);
     } else {
       window.addEventListener('resize', this.buildGrid);
     }
@@ -78,7 +81,7 @@ class DotGrid {
   }
 
   buildGrid() {
-    const { width, height } = this.wrapper.getBoundingClientRect();
+    const { width, height } = this.innerWrap.getBoundingClientRect();
     const dpr = window.devicePixelRatio || 1;
 
     this.canvas.width = width * dpr;
