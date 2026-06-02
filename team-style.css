@@ -61,7 +61,6 @@
     letter-spacing: -1.6px;
 
 .team-subtitle {
-    border-left: 4px solid var(--primary);
     padding: 16px 20px;
     background-color: rgba(28, 27, 27, 0.5);
     backdrop-filter: blur(2px);
