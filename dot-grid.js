@@ -27,7 +27,7 @@ class DotGrid {
     this.dotSize = options.dotSize || 16;
     this.gap = options.gap || 32;
     this.baseColor = options.baseColor || '#5227FF';
-    this.activeColor = options.activeColor || '#5227FF';
+    this.activeColor = options.activeColor || '#E3FF2C';
     this.proximity = options.proximity || 150;
     this.speedTrigger = options.speedTrigger || 100;
     this.shockRadius = options.shockRadius || 250;
