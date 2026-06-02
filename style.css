@@ -209,6 +209,7 @@ section {
     opacity: 0;
     transform: translateY(30px);
     color: #d1f100;
+    text-align: center;
 }
 .title-line:nth-child(1) { animation-delay: 0.1s; }
 .title-line:nth-child(2) { animation-delay: 0.2s; }
