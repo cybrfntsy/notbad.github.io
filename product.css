@@ -47,7 +47,6 @@
 
 .p-hero-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: center;
     min-height: 500px;
@@ -56,7 +55,7 @@
 .p-hero-content {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 24px;
 }
 
