@@ -188,8 +188,8 @@ class DotGrid {
       if (speed > this.speedTrigger && dist < this.proximity && !dot._inertiaApplied) {
         dot._inertiaApplied = true;
         gsap.killTweensOf(dot);
-        const pushX = dot.cx - pr.x + vx * 0.005;
-        const pushY = dot.cy - pr.y + vy * 0.005;
+        const pushX = (dot.cx - pr.x + vx * 0.005) * 0.15;
+        const pushY = (dot.cy - pr.y + vy * 0.005) * 0.15;
         
         // Use standard GSAP easing instead of InertiaPlugin to avoid premium plugin requirement
         gsap.to(dot, {
