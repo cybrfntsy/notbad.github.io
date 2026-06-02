@@ -169,11 +169,12 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 24px;
     width: 100%;
     max-width: 680px;
-    align-items: center;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .system-init-box {
