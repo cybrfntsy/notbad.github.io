@@ -81,6 +81,8 @@ img[src$=".svg"] {
     font-size: 36px;
     line-height: 1.2;
     color: #e5e2e1;
+    text-align: center;
+    align-self: center;
 }
 
 .p-hero-subtitle p {
@@ -102,6 +104,7 @@ img[src$=".svg"] {
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0px 4px 20px rgba(209, 241, 0, 0.1);
+    align-self: center;
 }
 
 .p-hero-btn span {
