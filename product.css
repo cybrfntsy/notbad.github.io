@@ -47,7 +47,6 @@
 
 .p-hero-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: center;
     min-height: 500px;
@@ -68,6 +67,7 @@
     line-height: 1;
     letter-spacing: -1.28px;
     margin: 0;
+    align-self: center;
 }
 
 .p-hero-subtitle {
