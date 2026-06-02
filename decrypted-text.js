@@ -7,8 +7,8 @@ class DecryptedText {
     this.originalText = element.getAttribute('data-text') || element.innerText.trim();
     this.element.innerText = this.originalText;
     
-    this.speed = 40; // 글자가 변하는 속도 (밀리초)
-    this.maxIterations = 15; // 몇 번만에 원래 글자로 다 돌아올지 결정
+    this.speed = 80; // 글자가 변하는 속도 (밀리초) - 느릴수록 천천히 변함
+    this.maxIterations = 10; // 몇 번만에 원래 글자로 다 돌아올지 결정
     this.characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+'; // 외계어 기호들
     this.availableChars = this.characters.split('');
     

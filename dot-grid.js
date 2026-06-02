@@ -127,7 +127,9 @@ class DotGrid {
   draw() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-    const proxSq = this.proximity * this.proximity;
+    // Use an extended proximity zone (2x) for soft outer glow effect
+    const softRadius = this.proximity * 2;
+    const softRadiusSq = softRadius * softRadius;
     const { x: px, y: py } = this.pointer;
 
     for (const dot of this.dots) {
@@ -138,9 +140,11 @@ class DotGrid {
       const dsq = dx * dx + dy * dy;
 
       let style = this.baseColor;
-      if (dsq <= proxSq) {
+      if (dsq <= softRadiusSq) {
         const dist = Math.sqrt(dsq);
-        const t = 1 - dist / this.proximity;
+        // Smooth cubic easing: strong in center, fades out gradually
+        const rawT = 1 - dist / softRadius;
+        const t = rawT * rawT * (3 - 2 * rawT); // smoothstep
         const r = Math.round(this.baseRgb.r + (this.activeRgb.r - this.baseRgb.r) * t);
         const g = Math.round(this.baseRgb.g + (this.activeRgb.g - this.baseRgb.g) * t);
         const b = Math.round(this.baseRgb.b + (this.activeRgb.b - this.baseRgb.b) * t);
