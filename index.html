@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="dot-grid.css?v=2">
 </head>
 <body>
+    <!-- Onboarding Overlay -->
+    <div id="onboarding">
+        <video id="onboarding-video" src="assets/logo-onboarding.mp4" muted playsinline></video>
+    </div>
+
     <!-- Header -->
     <header class="navbar">
         <div class="logo">
@@ -194,6 +199,45 @@
     <script src="dot-grid.js?v=4"></script>
     <script src="decrypted-text.js?v=3"></script>
     <script src="card-animations.js"></script>
+    <style>
+      #onboarding {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 1s ease;
+      }
+      #onboarding.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #onboarding-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+    <script>
+      (function () {
+        const overlay = document.getElementById('onboarding');
+        const video = document.getElementById('onboarding-video');
+
+        video.play();
+
+        video.addEventListener('timeupdate', function handler() {
+          if (video.currentTime >= 2) {
+            video.removeEventListener('timeupdate', handler);
+            overlay.classList.add('fade-out');
+            setTimeout(() => {
+              overlay.style.display = 'none';
+            }, 1000);
+          }
+        });
+      })();
+    </script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const container = document.getElementById('hero-dot-grid');
