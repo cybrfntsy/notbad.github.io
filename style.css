@@ -502,6 +502,7 @@ div.feature-header img {
     height: 8px;
     background: #353535;
     position: relative;
+    overflow: hidden;
 }
 
 .progress-bar {
@@ -509,8 +510,32 @@ div.feature-header img {
     top: 0;
     left: 0;
     height: 100%;
-    width: 66.67%;
+    width: 100%;
     background-color: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+@keyframes resilience-growth {
+    0% { 
+        transform: scaleX(0); 
+        animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1); 
+    }
+    40% { 
+        transform: scaleX(0.75); 
+        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+    }
+    60% { 
+        transform: scaleX(0.25); 
+        animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy recovery start */
+    }
+    100% { 
+        transform: scaleX(1); 
+    }
+}
+
+.progress-bar.animate {
+    animation: resilience-growth 2.4s forwards;
 }
 
 .quote-box {
