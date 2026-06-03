@@ -502,6 +502,7 @@ div.feature-header img {
     height: 8px;
     background: #353535;
     position: relative;
+    overflow: hidden;
 }
 
 .progress-bar {
