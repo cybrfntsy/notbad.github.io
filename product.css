@@ -593,11 +593,39 @@
    05 USE CASE SECTION
    ------------------------------------------------------------- */
 .p-usecase-section {
+    position: relative;
+    width: 100vw !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    padding: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+    margin-top: -80px !important;
+    overflow: hidden;
+    line-height: normal;
+    border-bottom: none !important;
+}
+
+.p-usecase-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.p-usecase-overlay {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 152px !important;
-    padding-right: 152px !important;
+    padding: 150px 152px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .p-usecase-card {
@@ -750,8 +778,8 @@
 
 @media (max-width: 1200px) {
     .p-usecase-section {
-        padding-left: 40px !important;
-        padding-right: 40px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 }
 

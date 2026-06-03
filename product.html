@@ -167,19 +167,22 @@
 
         <!-- Section 5: Use Case -->
         <section class="p-usecase-section">
-            <div class="p-usecase-card">
-                <div class="p-usecase-user">
-                    <div class="p-user-avatar">
-                        <img src="assets/user-avatar.svg" alt="">
+            <video class="p-usecase-video" src="assets/product-video02.mp4" muted playsinline loop></video>
+            <div class="p-usecase-overlay">
+                <div class="p-usecase-card">
+                    <div class="p-usecase-user">
+                        <div class="p-user-avatar">
+                            <img src="assets/user-avatar.svg" alt="">
+                        </div>
+                        <div class="p-user-info">
+                            <h4>Kim Ji-hun</h4>
+                            <span>Product Designer</span>
+                        </div>
                     </div>
-                    <div class="p-user-info">
-                        <h4>Kim Ji-hun</h4>
-                        <span>Product Designer</span>
-                    </div>
+                    <blockquote class="p-usecase-quote">
+                        "퇴근길 지하철 2호선, 오늘 하루가 너무 엉망이었다고 자책하던 중 '망했다 일기장'을 꺼냈습니다. 어떻게 망했는지 적다 보니 웃음이 나더라고요. '아, 그냥 내가 무리한 거였네'라는 작은 확신이 생기니 마음이 한결 가벼워졌어요."
+                    </blockquote>
                 </div>
-                <blockquote class="p-usecase-quote">
-                    "퇴근길 지하철 2호선, 오늘 하루가 너무 엉망이었다고 자책하던 중 '망했다 일기장'을 꺼냈습니다. 어떻게 망했는지 적다 보니 웃음이 나더라고요. '아, 그냥 내가 무리한 거였네'라는 작은 확신이 생기니 마음이 한결 가벼워졌어요."
-                </blockquote>
             </div>
         </section>
 
@@ -391,6 +394,22 @@
             <a href="#">Instagram</a>
         </div>
     </footer>
+    <script>
+    (function () {
+        const video = document.querySelector('.p-usecase-video');
+        if (!video) return;
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.2 });
+        observer.observe(video);
+    })();
+    </script>
     <script src="decrypted-text.js?v=3"></script>
     <script src="card-animations.js"></script>
 </body>
