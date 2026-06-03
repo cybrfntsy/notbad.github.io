@@ -116,11 +116,13 @@
         <section class="p-features-section">
             <div class="p-features-grid">
                 <!-- Card 1: Matte Black / Neon Edge -->
-                <div class="p-feature-card sticker-card">
+                <div class="p-feature-card span-2 highlight-glow">
                     <div class="p-feature-content">
                         <h3>Matte Black / Neon Edge</h3>
                         <p>시선을 사로잡는 네온 옐로우 엣지와 묵직한 매트 블랙의 조화.</p>
                     </div>
+                    <div class="p-glow-effect"></div>
+                    <img src="assets/feature-neon-edge.svg" alt="Neon Edge" class="neon-edge-vec">
                 </div>
 
                 <!-- Card 2: Pocket Size -->
@@ -133,19 +135,21 @@
                 </div>
 
                 <!-- Card 3: 3-Slot Pages -->
-                <div class="p-feature-card bottom-border-accent">
+                <div class="p-feature-card bottom-border-accent has-bottom-image">
                     <div class="p-feature-content">
                         <h3>3-Slot Pages</h3>
                         <p>구조화된 3단계 질문으로 실패를 논리적으로 분해합니다.</p>
                     </div>
+                    <img src="assets/feature-3-slots.svg" class="p-feature-bottom-img" alt="">
                 </div>
 
                 <!-- Card 4: QR Community -->
-                <div class="p-feature-card bottom-border-accent">
+                <div class="p-feature-card bottom-border-accent has-bottom-image">
                     <div class="p-feature-content">
                         <h3>QR Community</h3>
                         <p>익명으로 실패를 공유하고 서로를 응원하는 'NOT BAD' 클럽 입장.</p>
                     </div>
+                    <img src="assets/feature-qr.svg" class="p-feature-bottom-img qr-img" alt="">
                 </div>
 
                 <!-- Card 5: Sticker Sheet (Yellow theme) -->
@@ -254,10 +258,12 @@
       function initCard(card) {
         if (isMobile()) return;
 
+        // Prevent transition fighting by removing transform from CSS transition property
+        card.style.transition = 'border-color 0.3s ease, box-shadow 0.3s ease';
+
         let hovered = false;
         let particles = [];
         let timeouts = [];
-        let magAnim = null;
 
         function spawnParticles() {
           const { width, height } = card.getBoundingClientRect();
@@ -284,7 +290,6 @@
         function clearParticles() {
           timeouts.forEach(clearTimeout);
           timeouts = [];
-          if (magAnim) magAnim.kill();
           particles.forEach(p => {
             gsap.to(p, { scale: 0, opacity: 0, duration: 0.25, ease: 'back.in(1.7)',
               onComplete: () => p.parentNode && p.parentNode.removeChild(p) });
@@ -292,34 +297,60 @@
           particles = [];
         }
 
-        card.addEventListener('mouseenter', () => {
-          hovered = true;
-          spawnParticles();
-        });
-
-        card.addEventListener('mouseleave', () => {
-          hovered = false;
-          clearParticles();
-          gsap.to(card, { rotateX: 0, rotateY: 0, x: 0, y: 0, duration: 0.35, ease: 'power2.out' });
-        });
-
-        card.addEventListener('mousemove', e => {
+        function getTargetTransform(e) {
           const r = card.getBoundingClientRect();
           const x = e.clientX - r.left;
           const y = e.clientY - r.top;
           const cx = r.width / 2, cy = r.height / 2;
 
-          // tilt
-          gsap.to(card, {
+          return {
             rotateX: ((y - cy) / cy) * -8,
             rotateY: ((x - cx) / cx) * 8,
-            duration: 0.12, ease: 'power2.out', transformPerspective: 900
-          });
+            x: (x - cx) * 0.04,
+            y: (y - cy) * 0.04 - 4 // -4px smooth hover lift
+          };
+        }
 
-          // magnetism
-          magAnim = gsap.to(card, {
-            x: (x - cx) * 0.04, y: (y - cy) * 0.04,
-            duration: 0.3, ease: 'power2.out'
+        card.addEventListener('mouseenter', e => {
+          hovered = true;
+          spawnParticles();
+
+          const target = getTargetTransform(e);
+          gsap.to(card, {
+            rotateX: target.rotateX,
+            rotateY: target.rotateY,
+            x: target.x,
+            y: target.y,
+            duration: 0.3,
+            ease: 'power2.out',
+            transformPerspective: 900
+          });
+        });
+
+        card.addEventListener('mouseleave', () => {
+          hovered = false;
+          clearParticles();
+          gsap.to(card, {
+            rotateX: 0,
+            rotateY: 0,
+            x: 0,
+            y: 0,
+            duration: 0.35,
+            ease: 'power2.out',
+            clearProps: 'transform'
+          });
+        });
+
+        card.addEventListener('mousemove', e => {
+          const target = getTargetTransform(e);
+          gsap.to(card, {
+            rotateX: target.rotateX,
+            rotateY: target.rotateY,
+            x: target.x,
+            y: target.y,
+            duration: 0.12,
+            ease: 'power2.out',
+            transformPerspective: 900
           });
         });
 
