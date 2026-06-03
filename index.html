@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
     <link rel="stylesheet" href="dot-grid.css?v=2">
 </head>
 <body>
@@ -189,7 +189,6 @@
         </div>
     </footer>
 
-    <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="dot-grid.js?v=4"></script>
     <script src="decrypted-text.js?v=3"></script>
@@ -208,6 +207,21 @@
             resistance: 750,
             returnDuration: 1.5
           });
+        }
+
+        // Progress Bar Intersection Observer
+        const progressObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              progressObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        const progressBar = document.querySelector('.progress-bar');
+        if (progressBar) {
+          progressObserver.observe(progressBar);
         }
       });
     </script>
