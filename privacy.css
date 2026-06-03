@@ -17,7 +17,7 @@
 .privacy-header {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 50px;
 }
 
 .privacy-header .main-title {

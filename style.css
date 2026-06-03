@@ -156,12 +156,12 @@ section {
 
 /* Hero Section */
 .hero-section {
-    min-height: calc(100vh - 65px);
+    min-height: calc(100vh - 650px);
     display: flex;
     align-items: stretch;
     justify-content: center;
     gap: 60px;
-    padding: 60px 40px;
+    padding: 180px 40px;
     position: relative;
 }
 
@@ -207,25 +207,13 @@ section {
 
 .title-line {
     display: block;
-    animation: fadeInUp 0.8s forwards;
-    opacity: 0;
-    transform: translateY(30px);
     color: #d1f100;
 }
-.title-line:nth-child(1) { animation-delay: 0.1s; }
-.title-line:nth-child(2) { animation-delay: 0.2s; }
-.title-line:nth-child(3) { animation-delay: 0.3s; }
 
 .hero-title-line {
     display: block;
-    animation: fadeInUp 0.8s forwards;
-    opacity: 0;
-    transform: translateY(30px);
     color: #d1f100;
 }
-.hero-title-line:nth-child(1) { animation-delay: 0.1s; }
-.hero-title-line:nth-child(2) { animation-delay: 0.2s; }
-.hero-title-line:nth-child(3) { animation-delay: 0.3s; }
 
 
 .subtitle-container {
@@ -364,7 +352,7 @@ img.arrow-icon {
 
 /* Solution Section */
 .solution-section {
-    padding: 64px 128px;
+    padding: 200px 128px;
     display: flex;
     justify-content: center;
     background: radial-gradient(ellipse at center, rgba(69,73,50,0.2) 0%, transparent 70%);
@@ -537,7 +525,7 @@ div.feature-header img {
 
 /* System Process Section */
 .process-section {
-    padding: 64px 128px;
+    padding: 300px 128px;
     display: flex;
     justify-content: center;
     background-color: var(--bg-dark);

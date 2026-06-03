@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="team-style.css">
+    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="team-style.css?v=2">
 </head>
 <body>
     <header class="navbar">
@@ -16,7 +16,7 @@
             <a href="index.html"><img src="assets/logo.png" alt="Not Bad Logo"></a>
         </div>
         <nav class="nav-links">
-            <a href="index.html">FAILURES</a>
+            <a href="index.html">MAIN</a>
             <a href="product.html">PRODUCT</a>
             <a href="team.html" class="active">TEAM</a>
         </nav>
@@ -36,7 +36,8 @@
                 </div>
                 
                 <h1 class="team-title">
-                    완벽한 마침표보다,<br>유쾌한 쉼표를 찍는 사람들
+                    <span class="decrypted-text" data-text="완벽한 마침표보다,">완벽한 마침표보다,</span><br>
+                    <span class="decrypted-text" data-text="유쾌한 쉼표를 찍는 사람들">유쾌한 쉼표를 찍는 사람들</span>
                 </h1>
                 
                 <div class="team-subtitle">
@@ -119,10 +120,10 @@
                 <div class="mission-content">
                     <div class="mission-left">
                         <div class="system-init-box dark">
-                            <img src="assets/resilience.svg" alt="" class="mission-icon">
+                            <img src="assets/resilience.svg" alt="" wid>
                             <span>&nbsp;&nbsp;MISSION_STATEMENT</span>
                         </div>
-                        <h2>세상의 모든 미완성<br>프로젝트를 위한 안전한<br>놀이터 를 만드는 것</h2>
+                        <h2>세상의 모든 미완성<br>프로젝트를 위한 안전한<br>놀이터를 만드는 것</h2>
                     </div>
                     <div class="mission-divider"></div>
                     <div class="mission-right">
@@ -147,5 +148,7 @@
             <a href="#">SUPPORT</a>
         </div>
     </footer>
+
+    <script src="decrypted-text.js?v=3"></script>
 </body>
 </html>
