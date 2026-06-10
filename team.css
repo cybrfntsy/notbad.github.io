@@ -9,6 +9,16 @@
   letter-spacing: 0;
 }
 
+/* Sticky Stacking Interaction for Team Page */
+.team-hero, .team-member {
+  position: sticky;
+  top: 0;
+}
+.mission-cta, .main-footer {
+  position: relative;
+  z-index: 10;
+}
+
 /* Hero Section */
 .team-hero {
   position: relative;
@@ -55,7 +65,7 @@
 
 .team-hero-top {
   position: relative;
-  margin-bottom: 15rem;
+  margin-bottom: 8rem;
 }
 
 .team-hero-art {
@@ -72,6 +82,7 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 4rem;
+  margin-bottom: 2rem;
 }
 
 .hero-label {
@@ -94,13 +105,15 @@
 .team-member {
   padding: 0;
   overflow: hidden;
+  height: 100vh;
 }
 
 .member-container {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   padding: 4rem 3rem 0 3rem; /* padding bottom is 0 so image aligns to bottom */
+  height: 100%;
 }
 
 .member-reverse {
@@ -126,6 +139,9 @@
   flex: 1;
   padding-bottom: 4rem;
   padding-left: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .operator-label {
@@ -164,7 +180,10 @@
 
 /* Mission CTA Section */
 .mission-cta {
-  padding: 8rem 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .mission-label {
