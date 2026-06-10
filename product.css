@@ -15,6 +15,8 @@
   z-index: 2;
   margin: 0;
   letter-spacing: 0;
+  padding-top: 30px;
+  font-size: 100px;
 }
 
 /* Hero Section */
@@ -37,7 +39,7 @@
   width: 250px;
   height: auto;
   position: absolute;
-  right: 10%;
+  right: 5%;
   top: -50px;
 }
 .prod-hero-bottom {
@@ -61,6 +63,7 @@
   font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1.1;
   margin-bottom: 6rem;
+  text-align: center;
 }
 .sticky-notes-container {
   display: flex;
@@ -71,8 +74,8 @@
 .note {
   background-color: var(--neon);
   color: var(--text-dark);
-  width: 320px;
-  height: 320px;
+  width: 350px;
+  height: 350px;
   padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
@@ -154,6 +157,9 @@
   max-width: 400px;
   opacity: 0.8;
 }
+.text-right .feature-desc {
+  margin-left: auto;
+}
 
 /* Buy Button & Footer CTA */
 .footer-cta {
@@ -189,7 +195,7 @@
   .sticky-notes-container {
     flex-direction: column;
     align-items: center;
-    gap: 4rem;
+    gap: 5rem;
   }
   .note {
     transform: translateY(0) !important;
