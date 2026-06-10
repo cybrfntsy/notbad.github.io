@@ -88,13 +88,12 @@ h1, h2, h3, h4 {
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding-top: 8rem;
-  padding-bottom: 4rem;
+  padding-top: 15rem;
+  padding-bottom: 6rem;
   overflow: hidden;
 }
 
@@ -116,50 +115,56 @@ h1, h2, h3, h4 {
   padding: 0 3rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .title-wrapper {
   position: relative;
-  display: inline-block;
-  margin-bottom: 2rem;
   width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 8rem;
 }
 
 .hero-art-img {
   position: absolute;
-  top: -160px;
-  left: 15%;
-  width: 450px;
+  bottom: 50%; /* Adjust to sit right above the text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(450px, 60vw, 950px); /* Increased size significantly */
   z-index: 3;
   pointer-events: none;
 }
 
 .huge-title {
-  font-size: clamp(6rem, 16vw, 15rem);
+  font-size: clamp(6rem, 20vw, 18rem);
   line-height: 0.8;
   color: var(--neon);
   position: relative;
   z-index: 2;
   margin: 0;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtext {
-  max-width: 900px;
-  margin-top: 1rem;
+  text-align: left;
+  max-width: 850px;
+  margin-bottom: 0;
+  font-weight: 500;
+  width: 100%;
 }
 .hero-subtext p:first-child {
-  font-weight: 800;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.05em;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 .hero-subtext p:last-child {
-  font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.5;
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.6;
   text-transform: uppercase;
+  color: #ffffff;
 }
 
 /* Shame to Strength Section */
@@ -194,19 +199,25 @@ h1, h2, h3, h4 {
 }
 
 /* Values Section */
+.values-section {
+  width: 100%;
+}
 .value-row {
-  padding: 5rem 0;
+  padding: 12rem 0;
   display: flex;
   align-items: center;
 }
 .value-title {
-  font-size: clamp(4rem, 8vw, 6rem);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
   margin-bottom: 0.5rem;
+  line-height: 1;
 }
 .value-subtext {
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1.5;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  opacity: 0.8;
 }
 .text-right {
   text-align: right;
