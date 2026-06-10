@@ -5,21 +5,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const checkNavbarInversion = () => {
     const navbarRect = navbar.getBoundingClientRect();
     const navbarCenterY = navbarRect.top + navbarRect.height / 2;
+    const navbarCenterX = window.innerWidth / 2;
     
-    const yellowSections = document.querySelectorAll('.bg-yellow');
-    let isOverYellow = false;
+    // Temporarily disable pointer events on navbar to check what's underneath
+    const originalPointerEvents = navbar.style.pointerEvents;
+    navbar.style.pointerEvents = 'none';
     
-    yellowSections.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      if (navbarCenterY >= rect.top && navbarCenterY <= rect.bottom) {
-        isOverYellow = true;
+    const elementUnderNavbar = document.elementFromPoint(navbarCenterX, navbarCenterY);
+    
+    // Restore pointer events
+    navbar.style.pointerEvents = originalPointerEvents;
+    
+    if (elementUnderNavbar) {
+      if (elementUnderNavbar.closest('.bg-yellow')) {
+        navbar.classList.add('inverted');
+      } else {
+        navbar.classList.remove('inverted');
       }
-    });
-    
-    if (isOverYellow) {
-      navbar.classList.add('inverted');
-    } else {
-      navbar.classList.remove('inverted');
     }
   };
 
