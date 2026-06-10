@@ -1,23 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const target = document.querySelector('.cta-text');
-  if (!target) return;
+  const targets = document.querySelectorAll('.cta-text, .typewriter');
+  if (targets.length === 0) return;
 
-  const htmlContent = target.innerHTML;
-  const lines = htmlContent.split(/<br\s*\/?>/i);
-  
-  // Initial state: hide text but keep the container height so layout doesn't jump
-  target.innerHTML = '&nbsp;'; 
-  
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        observer.unobserve(target); // Only type once
-        typeText(target, lines);
+        observer.unobserve(entry.target); // Only type once
+        typeText(entry.target, entry.target._lines);
       }
     });
   }, { threshold: 0.3 });
-  
-  observer.observe(target);
+
+  targets.forEach(target => {
+    const htmlContent = target.innerHTML;
+    const lines = htmlContent.split(/<br\s*\/?>/i);
+    target._lines = lines;
+    
+    // Initial state: hide text but keep the container height so layout doesn't jump
+    target.innerHTML = '&nbsp;'; 
+    observer.observe(target);
+  });
   
   async function typeText(element, linesArray) {
     element.innerHTML = ''; // Clear initial spacer
