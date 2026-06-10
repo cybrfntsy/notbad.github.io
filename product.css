@@ -74,7 +74,7 @@
 .note-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
 }
 .note-desc {
   font-size: 0.85rem;
@@ -122,6 +122,7 @@
   font-size: 1.5rem;
   display: block;
   margin-bottom: 1rem;
+  letter-spacing: 0;
 }
 .feature-title {
   font-size: clamp(2.5rem, 5vw, 4rem);
@@ -146,7 +147,7 @@
   color: var(--text-dark);
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
   margin-top: 2rem;
 }
 .buy-btn:hover {

@@ -1,5 +1,5 @@
 :root {
-  --neon: #D4FF00;
+  --neon: #E4F600;
   --bg-dark: #111111;
   --bg-light: #1f1f1f;
   --text-light: #ffffff;
@@ -44,7 +44,7 @@ h1, h2, h3, h4 {
   font-weight: 800;
   text-transform: uppercase;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 /* Navbar */
@@ -112,7 +112,7 @@ h1, h2, h3, h4 {
   z-index: 2;
   width: 100%;
   max-width: 1300px;
-  padding: 0 3rem;
+  padding: 200px 3rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -121,15 +121,14 @@ h1, h2, h3, h4 {
 
 .title-wrapper {
   position: relative;
-  width: 100%;
   text-align: center;
   margin-top: 2rem;
-  margin-bottom: 8rem;
+  margin-bottom: 15rem;
 }
 
 .hero-art-img {
   position: absolute;
-  bottom: 50%; /* Adjust to sit right above the text */
+  bottom: 85%; /* Adjust to sit right above the text */
   left: 50%;
   transform: translateX(-50%);
   width: clamp(450px, 60vw, 950px); /* Increased size significantly */
@@ -138,18 +137,18 @@ h1, h2, h3, h4 {
 }
 
 .huge-title {
-  font-size: clamp(6rem, 20vw, 18rem);
+  font-size: 350px;
   line-height: 0.8;
   color: var(--neon);
   position: relative;
   z-index: 2;
   margin: 0;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .hero-subtext {
   text-align: left;
-  max-width: 850px;
+  padding: 0 30px;
   margin-bottom: 0;
   font-weight: 500;
   width: 100%;
@@ -158,9 +157,11 @@ h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-size: 2rem;
   margin-bottom: 1rem;
+  letter-spacing: 0;
 }
 .hero-subtext p:last-child {
-  font-size: 1.4rem;
+  font-family: var(--font-display);
+  font-size: 2rem;
   font-weight: 800;
   line-height: 1.6;
   text-transform: uppercase;
@@ -180,7 +181,7 @@ h1, h2, h3, h4 {
 .shame-content {
   display: flex;
   gap: 4rem;
-  align-items: flex-start;
+  align-items: end;
 }
 .shame-image-img {
   width: 50%;
@@ -209,15 +210,17 @@ h1, h2, h3, h4 {
 }
 .value-title {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: 56px;
   margin-bottom: 0.5rem;
   line-height: 1;
+  letter-spacing: 0;
 }
 .value-subtext {
-  font-size: 1rem;
+  font-size: 18px;
   font-weight: 500;
   line-height: 1.4;
   opacity: 0.8;
+  letter-spacing: -0.02em;
 }
 .text-right {
   text-align: right;
@@ -232,7 +235,7 @@ h1, h2, h3, h4 {
 }
 .process-label {
   font-size: 1.25rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0;
   margin-bottom: 6rem;
 }
 .cards-container {
