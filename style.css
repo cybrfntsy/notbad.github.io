@@ -21,11 +21,11 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  cursor: url('assets/cursor.svg') 4 4, auto;
+  cursor: url('assets/cursor.svg') 6 6, auto;
 }
 
 a, button, [role="button"], .btn, .buy-btn, .nav-links li {
-  cursor: url('assets/pointer.svg') 13 3, pointer;
+  cursor: url('assets/pointer.svg') 20 5, pointer;
 }
 
 /* Utilities */
