@@ -1,5 +1,14 @@
 /* Team Page Specific Styles */
 
+/* Base styles for team page huge titles */
+.team-huge-title {
+  line-height: 0.8;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  letter-spacing: 0;
+}
+
 /* Hero Section */
 .team-hero {
   position: relative;

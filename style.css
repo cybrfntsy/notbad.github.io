@@ -138,7 +138,7 @@ h1, h2, h3, h4 {
   pointer-events: none;
 }
 
-.huge-title {
+.index-huge-title {
   font-size: 350px;
   line-height: 0.8;
   color: var(--neon);
