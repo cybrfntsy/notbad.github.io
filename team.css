@@ -55,14 +55,14 @@
 
 .team-hero-top {
   position: relative;
-  margin-bottom: 8rem;
+  margin-bottom: 15rem;
 }
 
 .team-hero-art {
   position: absolute;
-  top: -20px;
-  right: 15%;
-  width: 300px;
+  top: -120px;
+  right: -5%;
+  width: 600px;
   height: auto;
   z-index: 3;
 }
@@ -87,6 +87,7 @@
   line-height: 1.8;
   font-weight: 500;
   max-width: 600px;
+  padding-top: 28px;
 }
 
 /* Team Members Section */
@@ -124,6 +125,7 @@
 .member-text {
   flex: 1;
   padding-bottom: 4rem;
+  padding-left: 4rem;
 }
 
 .operator-label {
@@ -167,7 +169,7 @@
 
 .mission-label {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 24px;
   margin-bottom: 1rem;
   letter-spacing: 0;
 }

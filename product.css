@@ -10,7 +10,7 @@
 
 /* Base styles for product page huge titles */
 .prod-huge-title {
-  line-height: 0.8;
+  line-height: 1;
   position: relative;
   z-index: 2;
   margin: 0;
