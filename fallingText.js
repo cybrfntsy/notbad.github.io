@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const textElem = container.querySelector('.cta-text');
   if (!textElem) return;
 
-  const rawText = textElem.innerHTML.replace(/<br\s*\/?>/gi, ' ').replace(/\s+/g, ' ').trim();
-  
   // Set up container
   container.style.position = 'relative';
   container.style.overflow = 'hidden';
@@ -14,11 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Increase minimum height so there's plenty of room to fall
   container.style.minHeight = '80vh'; 
   
-  textElem.innerHTML = '';
-  textElem.style.display = 'inline-block';
-  textElem.style.position = 'relative';
-  textElem.style.zIndex = '2';
-
   // create canvas container
   const canvasContainer = document.createElement('div');
   canvasContainer.style.position = 'absolute';
@@ -30,11 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
   canvasContainer.style.pointerEvents = 'none'; // so we can drag through if we want
   container.appendChild(canvasContainer);
 
-  const words = rawText.split(' ');
-  textElem.innerHTML = words.map(word => {
-    return `<span class="word" style="display: inline-block; margin: 0 10px; user-select: none;">${word}</span>`;
-  }).join(' ');
-
   let effectStarted = false;
 
   container.addEventListener('click', () => {
@@ -45,6 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function startFalling() {
+    const rawText = textElem.innerHTML.replace(/<br\s*\/?>/gi, ' ').replace(/<span[^>]*>_<\/span>/i, '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+    const words = rawText.split(' ');
+    textElem.innerHTML = words.map(word => {
+      return `<span class="word" style="display: inline-block; margin: 0 10px; user-select: none;">${word}</span>`;
+    }).join(' ');
+
+    textElem.style.display = 'inline-block';
+    textElem.style.position = 'relative';
+    textElem.style.zIndex = '2';
+
     const { Engine, Render, World, Bodies, Runner, Mouse, MouseConstraint } = Matter;
 
     const rect = container.getBoundingClientRect();
