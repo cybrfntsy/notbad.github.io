@@ -250,9 +250,10 @@
   }
   .prod-hero-art {
     position: relative;
-    right: 0;
-    top: 0;
-    width: 150px;
+    right: 1%;
+    top: -120%;
+    width: 500px;
+    height: auto;
   }
   .sticky-notes-container {
     flex-direction: column;
