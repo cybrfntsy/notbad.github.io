@@ -112,7 +112,7 @@ h1, h2, h3, h4 {
   z-index: 2;
   width: 100%;
   max-width: 1300px;
-  padding: 200px 3rem;
+  padding: 400px 3rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -121,9 +121,11 @@ h1, h2, h3, h4 {
 
 .title-wrapper {
   position: relative;
+  width: 100%;
+  max-width: 1000px;
   text-align: center;
   margin-top: 2rem;
-  margin-bottom: 15rem;
+  margin-bottom: 8rem;
 }
 
 .hero-art-img {
@@ -148,7 +150,7 @@ h1, h2, h3, h4 {
 
 .hero-subtext {
   text-align: left;
-  padding: 0 30px;
+  max-width: 1000px;
   margin-bottom: 0;
   font-weight: 500;
   width: 100%;
