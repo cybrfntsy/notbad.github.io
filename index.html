@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOTBAD. | The Perfection Trap</title>
-  <link rel="stylesheet" href="style.css?v=19">
+  <link rel="stylesheet" href="style.css?v=25">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
     <div class="hero-content">
       <div class="hero-text-container">
         <div class="title-wrapper">
-          <img src="assets/figma_girl.png" alt="Frustrated Art" class="hero-art-img">
+          <img src="assets/illust-1.gif" alt="Frustrated Art" class="hero-art-img">
           <h1 class="index-huge-title">NOTBAD.</h1>
         </div>
 
@@ -58,55 +58,62 @@
   <!-- Values Section -->
   <section class="values-section">
     <!-- Resilience -->
-    <div class="value-row bg-yellow">
-      <div class="container text-left">
+    <div class="value-row bg-yellow" style="position: relative; overflow: hidden;">
+      <video src="assets/main-1.mp4" autoplay loop muted playsinline class="value-bg-video"></video>
+      <div class="container text-left" style="position: relative; z-index: 1;">
         <h2 class="value-title text-black">RESILIENCE</h2>
-        <p class="value-subtext text-black" style="margin-top: 1rem;">[회복탄력성]<br>실패를 딛고 다시 일어서는 힘</p>
+        <p class="value-subtext text-black" style="margin-top: 1rem;">[회복탄력성]<br>실패는 다음 프로젝트의 밑거름</p>
       </div>
     </div>
     
     <!-- Honesty -->
-    <div class="value-row bg-dark">
-      <div class="container text-right">
+    <div class="value-row bg-dark" style="position: relative; overflow: hidden;">
+      <video src="assets/main-2.mp4" autoplay loop muted playsinline class="value-bg-video"></video>
+      <div class="container text-right" style="position: relative; z-index: 1;">
         <h2 class="value-title text-yellow">HONESTY</h2>
-        <p class="value-subtext text-yellow" style="margin-top: 1rem;">[솔직함]<br>자신의 한계와 실수를 인정하는 태도</p>
+        <p class="value-subtext text-yellow" style="margin-top: 1rem;">[솔직함]<br>잘 만든 척하는 위선을 거부</p>
       </div>
     </div>
     
     <!-- Resurrection -->
-    <div class="value-row bg-yellow">
-      <div class="container text-left">
+    <div class="value-row bg-yellow" style="position: relative; overflow: hidden;">
+      <video src="assets/main-3.mp4" autoplay loop muted playsinline class="value-bg-video"></video>
+      <div class="container text-left" style="position: relative; z-index: 1;">
         <h2 class="value-title text-black">RESURRECTION</h2>
-        <p class="value-subtext text-black" style="margin-top: 1rem;">[솔직한 부활]<br>무너진 폐허 속에서 새로운 가치를 발견하는 일</p>
+        <p class="value-subtext text-black" style="margin-top: 1rem;">[유쾌한 부활]<br>실패는 새로운 시작을 위한 환승역.</p>
       </div>
     </div>
   </section>
 
   <!-- System Process Section -->
   <section class="process-section bg-dark">
-    <div class="container">
-      <h4 class="process-label text-yellow">SYSTEM PROCESS</h4>
-      
-      <div class="process-cards-container">
-        <!-- Card 1 -->
-        <div class="process-card card-1 bg-yellow">
-          <div class="card-num text-black">01</div>
-          <h3 class="card-title text-black">LOG<br>THE CRASH</h3>
-          <p class="card-desc text-black">실패를 숨기지 않고 있는 그대로 기록합니다.</p>
-        </div>
-        
-        <!-- Card 2 -->
-        <div class="process-card card-2 bg-yellow">
-          <div class="card-num text-black">02</div>
-          <h3 class="card-title text-black">NETWORK<br>ANALYSIS</h3>
-          <p class="card-desc text-black">원인을 다각도로 분석하고 패턴을 파악합니다.</p>
-        </div>
-        
-        <!-- Card 3 -->
-        <div class="process-card card-3 bg-yellow">
-          <div class="card-num text-black">03</div>
-          <h3 class="card-title text-black">EXTRACT &<br>PIVOT</h3>
-          <p class="card-desc text-black">핵심 인사이트를 추출하여 다음 행동으로 연결합니다.</p>
+    <div class="process-pin-container">
+      <div class="sticky-process-container">
+        <div class="container">
+          <h4 class="process-label text-yellow">SYSTEM PROCESS</h4>
+          
+          <div class="cards-container">
+            <!-- Card 1 -->
+            <div class="process-card card-1">
+              <div class="card-num text-yellow">01</div>
+              <h3 class="card-title text-white">LOG<br>THE CRASH</h3>
+              <p class="card-desc text-white">INPUT FAILURE DATA.</p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="process-card card-2 bg-yellow">
+              <div class="card-num text-black">02</div>
+              <h3 class="card-title text-black">NETWORK<br>ANALYSIS</h3>
+              <p class="card-desc text-black">COMMUNITY<br>FEEDBACK LOOP.</p>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="process-card card-3">
+              <div class="card-num text-yellow">03</div>
+              <h3 class="card-title text-white">EXTRACT&<br>PIVOT</h3>
+              <p class="card-desc text-white">DEPLOY NEW<br>ITERATION.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -131,6 +138,7 @@
 
   <script src="navbar.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <script src="process.js"></script>
   <script src="fallingText.js"></script>
 </body>
 </html>

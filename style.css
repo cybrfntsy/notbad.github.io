@@ -265,9 +265,21 @@ h4 {
 }
 
 .value-row {
-  padding: 12rem 0;
+  min-height: 400px;
+  padding: 3rem 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+}
+
+.value-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.8; /* Slight opacity so text stands out more against busy videos */
 }
 
 .value-title {
@@ -300,7 +312,22 @@ h4 {
 
 /* System Process Section */
 .process-section {
-  padding: 8rem 0;
+  padding: 0;
+  margin-top: 8rem;
+}
+
+.process-pin-container {
+  height: 400vh;
+  position: relative;
+}
+
+.sticky-process-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .process-label {
@@ -312,12 +339,12 @@ h4 {
 .cards-container {
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  align-items: flex-start;
+  gap: 2rem;
 }
 
 .process-card {
-  flex: 1;
-  max-width: 350px;
+  width: 350px;
   height: 350px;
   padding: 3rem 2rem;
   display: flex;
@@ -325,22 +352,36 @@ h4 {
   justify-content: center;
   align-items: center;
   text-align: center;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.process-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-1 {
+  margin-top: 0;
 }
 
 .card-2 {
-  margin-top: 4rem;
+  margin-top: 120px;
 }
 
 .card-3 {
-  margin-top: 8rem;
+  margin-top: 240px;
 }
 
 .card-num {
+  font-family: var(--font-display);
   font-size: 3rem;
   margin-bottom: 1.5rem;
 }
 
 .card-title {
+  font-family: var(--font-display);
   font-size: 2.25rem;
   line-height: 1.1;
   margin-bottom: 1.5rem;
