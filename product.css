@@ -21,7 +21,7 @@
 
 /* Hero Section */
 .prod-hero {
-  padding: 10rem 0 6rem 0;
+  padding: 16rem 0 16rem 0;
   background-color: var(--bg-dark);
 }
 .prod-hero-container {
@@ -56,20 +56,34 @@
 
 /* Crashed Again Section */
 .crashed-section {
-  padding: 8rem 0;
+  padding: 0 0 8rem 0; /* Removed top padding so it sits flush with the video */
   background-color: #1a1a1a;
+  position: relative;
 }
 .crashed-title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.1;
-  margin-bottom: 6rem;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1;
+  letter-spacing: 0;
+  margin: 0 0 2rem 0;
   text-align: center;
+  /* This shifts the text up by exactly half its height (1 line) to overlap the video perfectly */
+  transform: translateY(-50%);
+  position: relative;
+  z-index: 10;
+}
+.notes-pin-container {
+  height: 400vh;
+  position: relative;
 }
 .sticky-notes-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
-  padding: 0 0 15rem 0; /* Remove horizontal padding, container handles it */
+  position: sticky;
+  top: 0;
+  height: 100vh;
 }
 .note {
   background-color: var(--neon);
@@ -83,15 +97,31 @@
   align-items: center;
   text-align: center;
   box-shadow: 10px 10px 0px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .note-1 {
-  transform: translateY(0);
+  transform: translateY(-20px);
 }
 .note-2 {
-  transform: translateY(120px);
+  transform: translateY(100px);
 }
 .note-3 {
-  transform: translateY(240px);
+  transform: translateY(220px);
+}
+
+/* Visible States */
+.note.visible.note-1 {
+  opacity: 1;
+  transform: translateY(-120px);
+}
+.note.visible.note-2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+.note.visible.note-3 {
+  opacity: 1;
+  transform: translateY(120px);
 }
 .note-title {
   font-size: 2rem;
@@ -116,11 +146,26 @@
 }
 
 /* Features Section */
+.features-section {
+  position: relative;
+}
 .feature-header {
-  padding: 4rem 0 2rem 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
 }
 .feature-row {
-  padding: 6rem 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
 }
 .feature-container {
   display: flex;
@@ -129,6 +174,13 @@
 }
 .feature-reverse {
   flex-direction: row-reverse;
+}
+.feature-image {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 .feature-image-placeholder {
   width: 450px;
@@ -163,7 +215,17 @@
 
 /* Buy Button & Footer CTA */
 .footer-cta {
-  padding: 12rem 0;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.footer-cta .prod-huge-title {
+  opacity: 0.5; /* Will be overwritten by JS on scroll */
 }
 .buy-btn {
   display: inline-block;
